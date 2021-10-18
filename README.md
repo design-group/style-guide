@@ -122,6 +122,7 @@ You could find long and complicated functions when working with some code. Do no
 ## Value add exception information
 
 # Version Control
+Call your repository 'master'.
 ## Git
 ## Github
 
