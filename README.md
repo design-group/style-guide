@@ -79,7 +79,23 @@ logger = system.util.getLogger("my_folder.my_script")
 ```
 
 ## Comments
-TODO: Write about commenting code
+Functions should be documented with a standard header in the following format:
+Name: [Name of the function]
+Description: [Brief summary of what the function is used for]
+Parameters: [A list of parameters taken by this function. Should include the expected data type and whether the parameter is required or optional.]
+Revisions: [A new note should be added every time the function is changed, with date and initials so later readers know who to ask about the function.] 
+
+Example:
+```
+NAME: csvToDataSet
+DESCRIPTION: Given file data from an imported CSV file, return a dataset suitable for display in an Ignition table. 
+            This function is compatible with data accessed by the Perspective File Upload component.
+PARAMETERS: fileData (REQ, array) - the bytes of a selected file. Obtained by file.getBytes().
+            hasHeaders (REQ, boolean) - True if the spreadsheet has a header row that should not be included in the actual dataset 
+REVISIONS:
+            *WS 10/21 - Created
+            *WS 11/21 - Improved error handling
+```
 
 ## Function Length
 Prefer small and focused functions.
@@ -94,12 +110,21 @@ You could find long and complicated functions when working with some code. Do no
 ## Project Structure
 ## View Structure
 ## Bindings
+
+Component properties should not be bound directly to other component properties.
+
+Generally, component properties should be bound to view parameters or custom properties on the view. That way, the binding will remain valid even if components are moved or renamed.
+
+If a component property needs to be accessed by another component, it should be stored in a custom property on the view with a bidirectional binding or change script.
+
 ## Logging
 
 # Vision
 ## Project Structure
 ## Template Structure
 ## Bindings
+
+
 ## Logging
 
 # Named Queries
@@ -122,7 +147,6 @@ You could find long and complicated functions when working with some code. Do no
 ## Value add exception information
 
 # Version Control
-Call your repository 'master'.
 ## Git
 ## Github
 
