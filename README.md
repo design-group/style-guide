@@ -93,7 +93,7 @@ logger.debug('Error in function PrintMyArray: invalid data type, expected array'
 
 **Trace:** The most specific type of log. As the name suggests, this is used when you want to trace through every step of your script to determine exactly how a request is being processed or data is being generated. These should be added while you are actively debugging the process, and not left to run during normal system operation.
 ```python
-logger.trace('Loop %s, current equipment is %s, current state is %s' % counter, equipName, equipState)
+logger.trace('Loop %s, current equipment is %s, current state is %s' % (counter, equipName, equipState))
 ```
 
 
