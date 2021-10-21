@@ -81,7 +81,6 @@ logger = system.util.getLogger("my_folder.my_script")
 ## Comments
 Functions should be documented with a standard header in the following format. The header should be written as a docstring.
 ```
-Name: [Name of the function]
 Description: [Brief summary of what the function is used for]
 Parameters: [A list of parameters taken by this function. Should include the expected data type and whether the parameter is required or optional.]
 Revisions: [A new note should be added every time the function is changed, with date and initials so later readers know who to ask about the function.] 
