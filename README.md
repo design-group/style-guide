@@ -107,6 +107,16 @@ You could find long and complicated functions when working with some code. Do no
 
 # Perspective
 
+## Folder Structure
+The top-level Views folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
+
+Each distinct view that can be accessed by a user should have its own folder. This folder should contain one view, named Overview, and another folder named Embedded Views. Any embedded views used by the Overview should be stored in this Embedded Views folder; in turn, these embedded views may be composed of their own embedded views, so the structure will repeat for as many folder levels deep as is necessary.
+
+## View Structure
+The root container of a view should be a flex container rather than a coordinate container. This allows the view to be responsive to different screen sizes so that it may be designed for TVs, computer screens, mobile devices, and anything in between.
+
+When developing views, prioritize scalability and the ability to reuse the view elsewhere in the application. If the view will be embedded in another view, as much data as possible should be passed in as view parameters rather than being generated from within the view.
+
 ## Bindings
 
 Component properties should not be bound directly to other component properties.
