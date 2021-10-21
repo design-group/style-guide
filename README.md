@@ -119,38 +119,3 @@ Generally, component properties should be bound to view parameters or custom pro
 
 If a component property needs to be accessed by another component, it should be stored in a custom property on the view with a bidirectional binding or change script.
 
-## Logging
-
-# Vision
-## Project Structure
-## Template Structure
-## Bindings
-
-
-## Logging
-
-# Named Queries
-## Project Structure
-## Stored Procedures
-
-# SQL
-## Stored Procedures
-
-# Tags
-## Parameter Inheritance
-## Tag Scripts
-## OPC Paths
-
-# Debugging
-## Non-Invasive Debugging
-
-# Error Handling
-## Creating an Exception
-## Value add exception information
-
-# Version Control
-## Git
-## Github
-
-
-
