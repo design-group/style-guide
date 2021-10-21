@@ -87,16 +87,16 @@ Revisions: [A new note should be added every time the function is changed, with 
 ```
 Example:
 ```python
-"""
-NAME: csvToDataSet
-DESCRIPTION: Given file data from an imported CSV file, return a dataset suitable for display in an Ignition table. 
-            This function is compatible with data accessed by the Perspective File Upload component.
-PARAMETERS: fileData (REQ, array) - the bytes of a selected file. Obtained by file.getBytes().
-            hasHeaders (REQ, boolean) - True if the spreadsheet has a header row that should not be included in the actual dataset 
-REVISIONS:
-           *WS 10/21 - Created
-           *WS 11/21 - Improved error handling
-"""
+def csvToDataSet(fileData, hasHeaders):
+  """
+  DESCRIPTION: Given file data from an imported CSV file, return a dataset suitable for display in an Ignition table. 
+              This function is compatible with data accessed by the Perspective File Upload component.
+  PARAMETERS: fileData (REQ, array) - the bytes of a selected file. Obtained by file.getBytes().
+              hasHeaders (REQ, boolean) - True if the spreadsheet has a header row that should not be included in the actual dataset 
+  REVISIONS:
+             *WS 10/21 - Created
+             *WS 11/21 - Improved error handling
+  """
 ```
 
 ## Function Length
