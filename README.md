@@ -73,6 +73,30 @@ i.e. for a script located at `my_folder/my_script` the logger would be defined a
 logger = system.util.getLogger("my_folder.my_script")
 ```
 
+Only Gateway-scope scripts and events will be sent to the Gateway logger. This includes scripts like a Gateway Timer script or a script on a Tag Change event. Loggers can be used in these events to send messages to the Gateway, where they will be visible in the Status > Logs page.
+
+Client-scope events such as Client Startup scripts, or user events like a button press, will not be sent to the Gateway logger. The print() function should be used instead of loggers in these events to log error messages to the Output Console in the Designer. 
+
+#### Logging Levels
+When sending messages to the Ignition logger, there are different levels of severity that can be attached to the log. The most common are Info, Debug, and Trace.
+
+
+**Info:** The standard log level indicating that something happened, the application entered a certain state, etc. These messages do not require a response, but notify users of the progress of everyday processes.
+```python
+logger.info('Successful connection to database.')
+```
+
+**Debug:** This level should be used for diagnosing and troubleshooting general issues within the application. These can be left in the code during normal system operation to flag when an unexpected error has occurred.
+```python
+logger.debug('Error in function PrintMyArray: invalid data type, expected array')
+```
+
+**Trace:** The most specific type of log. As the name suggests, this is used when you want to trace through every step of your script to determine exactly how a request is being processed or data is being generated. These should be added while you are actively debugging the process, and not left to run during normal system operation.
+```python
+logger.trace('Loop %s, current equipment is %s, current state is %s' % counter, equipName, equipState)
+```
+
+
 ## Comments
 Functions should be documented with a standard header in the following format. The header should be written as a docstring.
 ```
