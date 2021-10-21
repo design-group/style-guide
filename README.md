@@ -63,13 +63,8 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 `STANDARD SYNTAX`,
 `functionName`,
 
-# Architecture
-## Visualization
-## Config
 
 # Scripting
-## Project Structure
-## Module Structure
 ## Logging
 Always include logger definition as the first line of a script module, or a script transform. Loggers should be defined with `system.util.getLogger()` and use the full package path as their name.
 
@@ -109,8 +104,7 @@ Even if your long function works perfectly now, someone modifying it in a few mo
 You could find long and complicated functions when working with some code. Do not be intimidated by modifying existing code: if working with such a function proves to be difficult, you find that errors are hard to debug, or you want to use a piece of it in several different contexts, consider breaking up the function into smaller and more manageable pieces.
 
 # Perspective
-## Project Structure
-## View Structure
+
 ## Bindings
 
 Component properties should not be bound directly to other component properties.
@@ -118,39 +112,4 @@ Component properties should not be bound directly to other component properties.
 Generally, component properties should be bound to view parameters or custom properties on the view. That way, the binding will remain valid even if components are moved or renamed.
 
 If a component property needs to be accessed by another component, it should be stored in a custom property on the view with a bidirectional binding or change script.
-
-## Logging
-
-# Vision
-## Project Structure
-## Template Structure
-## Bindings
-
-
-## Logging
-
-# Named Queries
-## Project Structure
-## Stored Procedures
-
-# SQL
-## Stored Procedures
-
-# Tags
-## Parameter Inheritance
-## Tag Scripts
-## OPC Paths
-
-# Debugging
-## Non-Invasive Debugging
-
-# Error Handling
-## Creating an Exception
-## Value add exception information
-
-# Version Control
-## Git
-## Github
-
-
 
