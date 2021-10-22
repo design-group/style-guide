@@ -113,3 +113,24 @@ Generally, component properties should be bound to view parameters or custom pro
 
 If a component property needs to be accessed by another component, it should be stored in a custom property on the view with a bidirectional binding or change script.
 
+
+# Architecture Visualization
+
+A visual representation of the architecture around the gateway can be useful when planning a project or sharing designs with a client. Inductive Automation provides the following example of an architecture diagram on their website:
+![Architecture Diagram](https://inductiveautomation.com/static/images/architectures/ArchitectureDiagram-Standard@2x.png "IA Example Architecture Diagram")
+
+IA provides [a library of graphics](https://bw1.sharepoint.com/sites/IgnitionUsersGroup/Shared%20Documents/Helpful%20Ignition%20Resources/ArchitectureDiagramElements.zip) that represent many different devices that may be included in the architecture. These graphics should be used when building our own diagrams to promote clarity and consistency between projects.
+
+The use of these graphics is subject to the following restrictions:
+
+- To use these graphics, you must be a member in good standing in one of Inductive
+Automation’s partner programs (Integrator Program, Ignition Onboard Program,
+Distributor Program), or you must have express written permission from Inductive
+Automation’s Director of Marketing.
+
+- Architecture diagrams must display the following sentence at a size that is easily legible: 
+```
+This architecture has not been validated by Inductive Automation.
+```
+
+If a specific Ignition or third-party module is used to develop functionality for certain devices, that can be represented in the diagram using this [library of module icons](https://bw1.sharepoint.com/sites/IgnitionUsersGroup/Shared%20Documents/Helpful%20Ignition%20Resources/ModuleIconsPack.zip). It contains graphics that represent Ignition's modules, as well as the modules from [Cirrus Link](https://cirrus-link.com/) and [Sepasoft](https://www.sepasoft.com/).
