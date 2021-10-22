@@ -146,7 +146,7 @@ Each distinct view that can be accessed by a user should have its own folder. Th
 ## View Structure
 The root container of a view should be one of the following:
 
-**Flex Container:** This should be the default for almost all views. Building a view inside of a flex container allows the view to be responsive to different screen sizes so that it may be designed for TVs, computer screens, mobile devices, and anything in between.
+**Flex Container:** This should be the default for almost all views. Building a view inside of a flex container allows its components to grow, shrink, and wrap in response to the size of the screen on which it is rendered. This way, the same view may be designed for TVs, computer screens, mobile devices, and anything in between.
 
 **Breakpoint Container:** More situational than the flex container, this type should be used when you need to render the same view in a different way depending on the screen size. If you need to replace text with icons on a smaller screen, or add additional components on a larger screen, use this container.
 
