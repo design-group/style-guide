@@ -162,3 +162,4 @@ Generally, component properties should be bound to view parameters or custom pro
 
 If a component property needs to be accessed by another component, it should be stored in a custom property on the view with a bidirectional binding or change script.
 
+Keep expression bindings as simple and concise as possible. If an expression binding requires multiple lines of code, consider using a script transform instead.
