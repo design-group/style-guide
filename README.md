@@ -73,12 +73,17 @@ i.e. for a script located at `my_folder/my_script` the logger would be defined a
 logger = system.util.getLogger("my_folder.my_script")
 ```
 
-Only Gateway-scope scripts and events will be sent to the Gateway logger. This includes scripts like a Gateway Timer script or a script on a Tag Change event. Loggers can be used in these events to send messages to the Gateway, where they will be visible in the Status > Logs page.
+Once the logger is defined, a message may be sent to the Gateway log using one of several functions. It can be found under Status > Logs on the Gateway page. Several options for different types of messages are described in the next section.
+```python
+logger.debug('This is a debug message')
+```
 
-Client-scope events such as Client Startup scripts, or user events like a button press, will not be sent to the Gateway logger. The print() function should be used instead of loggers in these events to log error messages to the Output Console in the Designer. 
+When actively developing a script in Ignition, it is often more convenient to use the print() function to write debug messages to Ignition's console instead of logging messages that have to be checked on the Gateway. 
+
+Once the script is in use, calls to print() for debugging should be removed and loggers should be put in place to cover any necessary debugging points and error messages.
 
 #### Logging Levels
-When sending messages to the Ignition logger, there are different levels of severity that can be attached to the log. The most common are Info, Debug, and Trace.
+When sending messages to the Ignition logger, there are different levels of severity that can be attached to the log. The most common are Info, Error, Debug, and Trace.
 
 
 **Info:** The standard log level indicating that something happened, the application entered a certain state, etc. These messages do not require a response, but notify users of the progress of everyday processes.
@@ -86,6 +91,10 @@ When sending messages to the Ignition logger, there are different levels of seve
 logger.info('Successful connection to database.')
 ```
 
+**Error:** This level is used for messages that are intended to be seen by end users, so they should not contain too much technical language that would only be useful in debugging. An Error message should be logged when an error occurs as a result of a user interacting with the application. This way the user can confirm that something is wrong instead of seeing the interaction fail silently.
+```python
+logger.error('An error occurred while attempting to update equipment mode.')
+```
 **Debug:** This level should be used for diagnosing and troubleshooting general issues within the application. These can be left in the code during normal system operation to flag when an unexpected error has occurred.
 ```python
 logger.debug('Error in function PrintMyArray: invalid data type, expected array')
@@ -135,7 +144,13 @@ The top-level Views folder should contain folders that organize the views based 
 Each distinct view that can be accessed by a user should have its own folder. This folder should contain one view, named Overview, and another folder named Embedded Views. Any embedded views used by the Overview should be stored in this Embedded Views folder; in turn, these embedded views may be composed of their own embedded views, so the structure will repeat for as many folder levels deep as is necessary.
 
 ## View Structure
-The root container of a view should be a flex container rather than a coordinate container. This allows the view to be responsive to different screen sizes so that it may be designed for TVs, computer screens, mobile devices, and anything in between.
+The root container of a view should be one of the following:
+
+**Flex Container:** This should be the default for almost all views. Building a view inside of a flex container allows the view to be responsive to different screen sizes so that it may be designed for TVs, computer screens, mobile devices, and anything in between.
+
+**Breakpoint Container:** More situational than the flex container, this type should be used when you need to render the same view in a different way depending on the screen size. If you need to replace text with icons on a smaller screen, or add additional components on a larger screen, use this container.
+
+**Coordinate Container:** This should be the least commonly used container. It is appropriate when designing fixed-point P&ID style screens that are not intended to be viewed on various screen sizes. If the exact location and size of the components in the view is necessary to understand their meanings, this container may be used.
 
 When developing views, prioritize scalability and the ability to reuse the view elsewhere in the application. If the view will be embedded in another view, as much data as possible should be passed in as view parameters rather than being generated from within the view.
 
