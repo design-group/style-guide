@@ -82,16 +82,11 @@ When actively developing a script in Ignition, it is often more convenient to us
 
 Once the script is in use, calls to print() for debugging should be removed and loggers should be put in place to cover any necessary debugging points and error messages.
 
-If your project contains many loggers that send debugging messages to the Gateway, it may be useful to create a custom session property that can be toggled from within the application to enable or disable the loggers. 
+If your project contains many loggers that send debugging messages to the Gateway, it may be useful to create a custom session property that can be toggled from within the application to enable or disable the loggers. This property can be checked from the scripts that send log messages to determine if the message should be withheld.
 
 As the project grows in scope, the global setting should be replaced with a configuration screen where a user may enable and disable loggers for specific areas of functionality.
 
 For a more convenient script logging experience, you may also want to implement [this python class](https://gist.github.com/keith-gamble/d2d58f0cd43d8117e0c7e4d81296cb65), which replaces the built-in script logging functions with versions that will also print the logged message to the Scripting Console or Perspective Console as appropriate.
-
-# may be useful to have a "debug switch" that is tied to a custom session property. Loggers could check this before logging
-# to see if certain messages should be withheld.
-# As a project grows, may be preferable to split this off into a configuration screen where certain categories or levels of 
-# loggers can be disabled or enabled in a similar way
 
 #### Logging Levels
 When sending messages to the Ignition logger, there are different levels of severity that can be attached to the log. The most common are Info, Error, Debug, and Trace.
