@@ -116,7 +116,8 @@ If a component property needs to be accessed by another component, it should be 
 
 # Architecture Visualization
 
-A visual representation of the architecture around the gateway can be useful when planning a project or sharing designs with a client. Inductive Automation provides the following example of an architecture diagram on their website:
+A visual representation of the architecture around the gateway can be useful when planning a project or sharing designs with a client.
+
 ![Architecture Diagram](https://inductiveautomation.com/static/images/architectures/ArchitectureDiagram-Standard@2x.png "IA Example Architecture Diagram")
 
 IA provides [a library of graphics](https://bw1.sharepoint.com/sites/IgnitionUsersGroup/Shared%20Documents/Helpful%20Ignition%20Resources/ArchitectureDiagramElements.zip) that represent many different devices that may be included in the architecture. These graphics should be used when building our own diagrams to promote clarity and consistency between projects.
@@ -129,8 +130,12 @@ Distributor Program), or you must have express written permission from Inductive
 Automation’s Director of Marketing.
 
 - Architecture diagrams must display the following sentence at a size that is easily legible: 
-```
-This architecture has not been validated by Inductive Automation.
-```
+  ```
+  This architecture has not been validated by Inductive Automation.
+  ```
 
 If a specific Ignition or third-party module is used to develop functionality for certain devices, that can be represented in the diagram using this [library of module icons](https://bw1.sharepoint.com/sites/IgnitionUsersGroup/Shared%20Documents/Helpful%20Ignition%20Resources/ModuleIconsPack.zip). It contains graphics that represent Ignition's modules, as well as the modules from [Cirrus Link](https://cirrus-link.com/) and [Sepasoft](https://www.sepasoft.com/).
+
+Architecture diagrams should be as simple as possible while still communicating the relevant concepts. It is not necessary that every PLC or client device is represented in the diagram, only that the viewer understands how one PLC or one client in general fits into the overall system.
+
+For more examples of diagrams for different architectures, refer to [Inductive's Common Ignition Architectures page.](https://inductiveautomation.com/ignition/architectures)
