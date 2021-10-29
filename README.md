@@ -173,7 +173,6 @@ The best comprehensive resouce for Markdown is the [Markdown Guide.](https://www
 
 Important elements to know about are:
 
-
 ##### Code Snippets
 Place three backticks ( ` ) before and after a section to identify it as a code snippet.
 
@@ -196,7 +195,7 @@ def myFunction()
 Any code within a Markdown document should be contained in a snippet.
 
 ##### Links
-To add a link to a website, write the link text in [brackets], followed by the URL in parantheses.
+To add a link to a website, write the link text in [brackets], followed by the URL in (parantheses).
 
 *This code:*
 ```
