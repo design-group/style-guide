@@ -168,3 +168,84 @@ Generally, component properties should be bound to view parameters or custom pro
 
 If a component property needs to be accessed by another component, it should be stored in a custom property on the view with a bidirectional binding or change script.
 
+## Markdown Syntax
+The best comprehensive resouce for Markdown is the [Markdown Guide.](https://www.markdownguide.org/basic-syntax/) Also see the [Extended Syntax](https://www.markdownguide.org/extended-syntax) page for more complex elements like tables and footnotes.
+
+Important elements to know about are:
+
+##### Code Snippets
+Place three backticks ( ` ) before and after a section to identify it as a code snippet.
+
+*This code:*
+
+````
+```
+def myFunction()
+  // do stuff
+```
+````
+
+*will render as the following:*
+
+```
+def myFunction()
+  // do stuff
+```
+
+Any code within a Markdown document should be contained in a snippet.
+
+##### Links
+To add a link to a website, write the link text in [brackets], followed by the URL in (parantheses).
+
+*This code:*
+```
+Check out the [style guide!](https://github.com/design-group/style-guide)
+```
+*will render as the following:*
+
+Check out the [style guide!](https://github.com/design-group/style-guide)
+
+##### Lists
+To create a list, place a dash ( - ) before the line that should begin the list.
+
+Subsequent dashes on the same tab level will add more elements to the list, while dashes on an increased tab level will create a nested list.
+
+*This code:*
+```
+- Milk
+- Eggs
+- Fruit
+  - Bananas
+  - Apples
+    - Honeycrisp
+  - Oranges
+```
+*will render as the following:*
+- Milk
+- Eggs
+- Fruit
+  - Bananas
+  - Apples
+    - Honeycrisp
+  - Oranges
+
+##### Headings
+Place a pound sign ( # ) before a line to identify it as a heading.
+You can add up to six pound signs to reduce the emphasis of the heading.
+
+*This code:*
+```
+# Major Heading
+
+### Minor Heading
+```
+*will render as the following:*
+
+# Major Heading
+###### Minor Heading
+
+
+
+
+
+
