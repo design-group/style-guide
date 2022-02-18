@@ -35,16 +35,16 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 `function_parameter_name`, 
 `local_var_name`,
 ## Perspective
-`folderName`,
-`viewName`,
+`Folder Name`,
+`View Name`,
 `PageName`,
 `propertyName`,
 `messageHandlerName`,
-`componentName`,
+`Component Name`,
 ## Vision
-`folderName`,
-`templateName`,
-`componentName`,
+`Folder Name`,
+`Template Name`,
+`Component Name`,
 `propertyName`,
 `parameterName`,
 
@@ -117,21 +117,24 @@ Functions should be documented with a standard header in the following format. T
 ```
 Description: [Brief summary of what the function is used for]
 Parameters: [A list of parameters taken by this function. Should include the expected data type and whether the parameter is required or optional.]
-Revisions: [A new note should be added every time the function is changed, with date and initials so later readers know who to ask about the function.] 
 ```
 Example:
 ```python
-def csvToDataSet(fileData, hasHeaders):
+def csvToDataSet(file_data, has_headers):
   """
   DESCRIPTION: Given file data from an imported CSV file, return a dataset suitable for display in an Ignition table. 
               This function is compatible with data accessed by the Perspective File Upload component.
-  PARAMETERS: fileData (REQ, array) - the bytes of a selected file. Obtained by file.getBytes().
-              hasHeaders (REQ, boolean) - True if the spreadsheet has a header row that should not be included in the actual dataset 
-  REVISIONS:
-             *WS 10/21 - Created
-             *WS 11/21 - Improved error handling
+  PARAMETERS: file_data (REQ, array) - the bytes of a selected file. Obtained by file.getBytes().
+              has_headers (REQ, boolean) - True if the spreadsheet has a header row that should not be included in the actual dataset 
   """
 ```
+
+If there are no parameters, we should still include the text `None` like so:
+```
+  PARAMETERS: None
+```
+
+Revisions are not needed, as we can use Git-blame to identify who made changes and what the commits and reasoning was.
 
 ## Function Length
 Prefer small and focused functions.
@@ -147,7 +150,7 @@ You could find long and complicated functions when working with some code. Do no
 ## Folder Structure
 The top-level Views folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
 
-Each distinct view that can be accessed by a user should have its own folder. This folder should contain one view, named Overview, and another folder named Embedded Views. Any embedded views used by the Overview should be stored in this Embedded Views folder; in turn, these embedded views may be composed of their own embedded views, so the structure will repeat for as many folder levels deep as is necessary.
+Each distinct view that can be accessed by a user should have its own folder. This folder should contain one view, with a clear and full-text name that explains the purpose of the view, and another folder named Embedded Views. Any embedded views used by the main view should be stored in this Embedded Views folder; in turn, these embedded views may be composed of their own embedded views, so the structure will repeat for as many folder levels deep as is necessary.
 
 ## View Structure
 The root container of a view should be one of the following:
