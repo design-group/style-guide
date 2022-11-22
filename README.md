@@ -32,6 +32,11 @@ To execute `pylint` around the entire project a search for all `.py` files can b
 find . -name "*.py" | xargs pylint
 ```
 
+To execute `pylint` around the entire project, and also print out the file path in any errors in a VS code format you can run the following:
+```sh
+find . -name "*.py" | xargs pylint --msg-template="{path}({line}): [{msg_id}{obj}] {msg}"
+```
+
 The following github action can be used to automate linting on any of your repository pull requests
 ```yaml
 name: Pylint
