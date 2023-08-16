@@ -83,6 +83,8 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 
 - names that needlessly include the type of the variable (for example: `id_to_name_dict`)
 
+## File extensions
+- For Yet Another Markup Language (YAML) files needed for files such as for Docker Compose, GitHub Actions, etc. the preferred file extension is `.yaml`.
 ## Scripting
 `module_name`, 
 `package_name`, 
