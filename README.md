@@ -245,7 +245,7 @@ For Example:
 ```
 
 The top level native Perspective `Views` folder contains a folder that describes the primary feature in this tree. \
-`Main` folder contains the `Embedded Views` folder, `Popups` folder, and `Main View`.\
+The `Example Feature` folder contains the `Embedded Views` folder, `Popups` folder, and `Example Feature` view.\
 The `Embedded Views` folder expands into multiple folders and views, the folders organize related views that need to stay together.\
 The `Shopping Views` folder simply contains a few related views, while the `Messenger Views` folder contains a subviews and additional folders to further group and organize nested views.
 
