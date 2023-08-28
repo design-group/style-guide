@@ -213,7 +213,22 @@ You could find long and complicated functions when working with some code. Do no
 ## Folder Structure
 The top-level Views folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
 
-Each distinct view that can be accessed by a user should have its own folder. This folder should contain one view, with a clear and full-text name that explains the purpose of the view, and another folder named Embedded Views. Any embedded views used by the main view should be stored in this Embedded Views folder; in turn, these embedded views may be composed of their own embedded views, so the structure will repeat for as many folder levels deep as is necessary.
+Each folder under the "Views" folder should have the following structure: 
+1. One view, with a clear and full-text name that explains the purpose of the view and matches the name of its parent folder.
+2. A folder named Embedded Views. Any embedded or repeated views used by the main view should be stored in this Embedded Views folder. This folder may contain multiple views and/or multiple folders to group and organize related or deeply nested views.
+3. (Optional) A folder named Popups containing all popup views.
+
+For Example:
+
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/1299c24c-0403-4c61-9ea7-124ac32006fe">
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/d9362278-62fe-4b71-b4f9-1245192d9905">
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/525e8378-aff6-4af4-b10f-99553f931db5">
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/a74e517b-02c3-4668-88fd-ddd712f4d904">
+
+The top level `Views` folder contains a single folder for the `Example Page` view.\
+`Example Page` folder contains the `Embedded Views` folder, `Popups` folder, and `Example Page` view.\
+The `Embedded Views` folder expands into multiple folders and views, the folders organize related views that need to stay together.\
+The `Graphs` folder simply contains a few related views, while the `Customer Details` folder contains a `Customer Details` view and more folders to group and organize deeply nested views.
 
 ## View Structure
 The root container of a view should be one of the following:
