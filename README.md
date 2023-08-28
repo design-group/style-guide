@@ -211,9 +211,43 @@ You could find long and complicated functions when working with some code. Do no
 # Perspective
 
 ## Folder Structure
-The top-level Views folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
+The top-level native Perspective `Views` folder should contain folders that organize the views based on the navigation structure of the application, and higher level application features. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
 
-Each distinct view that can be accessed by a user should have its own folder. This folder should contain one view, with a clear and full-text name that explains the purpose of the view, and another folder named Embedded Views. Any embedded views used by the main view should be stored in this Embedded Views folder; in turn, these embedded views may be composed of their own embedded views, so the structure will repeat for as many folder levels deep as is necessary.
+Each folder under the native Perspective `Views` folder should have the following structure: 
+1. One view, with a clear and full-text name that explains the purpose of the view and matches the name of its parent folder.
+2. A folder named Embedded Views. Any embedded or repeated views used by the main view should be stored in this Embedded Views folder. This folder may contain multiple views and/or multiple folders to group and organize related or deeply nested views.
+3. (Optional) A folder named Popups containing all popup views.
+
+For Example:
+
+```sh
+└── Example Feature
+    ├── Embedded Views
+    │   ├── Messenger
+    │   │   ├── Sent Messages
+    │   │   │   ├── Sent Messages 1
+    │   │   │   └── Sent Messages 2
+    │   │   ├── Received Messages
+    │   │   │   ├── Received Messages 1
+    │   │   │   └── Received Messages 2
+    │   │   ├── Subview 1
+    │   │   └── Subview 2
+    │   ├── Shopping
+    │   │   ├── Shopping 1
+    │   │   ├── Shopping 2
+    │   │   └── Shopping 3
+    │   ├── Subview 1
+    │   └── Subview 2
+    ├── Popups
+    │   ├── Error
+    │   └── Warning
+    └── Example Feature
+```
+
+The top level native Perspective `Views` folder contains a folder that describes the primary feature in this tree. \
+The `Example Feature` folder contains the `Embedded Views` folder, `Popups` folder, and `Example Feature` view.\
+The `Embedded Views` folder expands into multiple folders and views, the folders organize related views that need to stay together.\
+The `Shopping` folder simply contains a few related views, while the `Messenger` folder contains a subviews and additional folders to further group and organize nested views.
 
 ## View Structure
 The root container of a view should be one of the following:
