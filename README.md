@@ -211,24 +211,44 @@ You could find long and complicated functions when working with some code. Do no
 # Perspective
 
 ## Folder Structure
-The top-level Views folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
+The top-level `Views` folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
 
-Each folder under the "Views" folder should have the following structure: 
+Each folder under the `Views` folder should have the following structure: 
 1. One view, with a clear and full-text name that explains the purpose of the view and matches the name of its parent folder.
 2. A folder named Embedded Views. Any embedded or repeated views used by the main view should be stored in this Embedded Views folder. This folder may contain multiple views and/or multiple folders to group and organize related or deeply nested views.
 3. (Optional) A folder named Popups containing all popup views.
 
 For Example:
 
-<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/1299c24c-0403-4c61-9ea7-124ac32006fe">
-<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/d9362278-62fe-4b71-b4f9-1245192d9905">
-<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/525e8378-aff6-4af4-b10f-99553f931db5">
-<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/a74e517b-02c3-4668-88fd-ddd712f4d904">
+```sh
+└── Views
+    └── Main
+        ├── Embedded Views
+        │   ├── Messenger Views
+        │   │   ├── Sent Messages
+        │   │   │   ├── Sent Messages View 1
+        │   │   │   └── Sent Messages View 2
+        │   │   ├── Received Messages
+        │   │   │   ├── Received Messages View 1
+        │   │   │   └── Received Messages View 2
+        │   │   ├── Messenger Subview 1
+        │   │   └── Messenger Subview 2
+        │   ├── Shopping Views
+        │   │   ├── Shopping View 1
+        │   │   ├── Shopping View 2
+        │   │   └── Shopping View 3
+        │   ├── Main Subview 1
+        │   └── Main Subview 2
+        ├── Popups
+        │   ├── Error Popup
+        │   └── Warning Popup
+        └── Main View
+```
 
-The top level `Views` folder contains a single folder for the `Example Page` view.\
-`Example Page` folder contains the `Embedded Views` folder, `Popups` folder, and `Example Page` view.\
+The top level `Views` folder contains a single folder for the `Main` view.\
+`Main` folder contains the `Embedded Views` folder, `Popups` folder, and `Main View`.\
 The `Embedded Views` folder expands into multiple folders and views, the folders organize related views that need to stay together.\
-The `Graphs` folder simply contains a few related views, while the `Customer Details` folder contains a `Customer Details` view and more folders to group and organize deeply nested views.
+The `Shopping Views` folder simply contains a few related views, while the `Messenger Views` folder contains a subviews and additional folders to further group and organize nested views.
 
 ## View Structure
 The root container of a view should be one of the following:
