@@ -128,6 +128,20 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 
 
 # Scripting
+## File Structure
+The top-level `Project Library` folder should contain folders that organize your scripts based on the structure of the application. Each package under the `Project Library` folder should correspond to a major feature of the application, with further sub-packages for each unique page, scripts within these sub-packages for each unique view, and one script per page dedicated to all database interactions.
+
+For Example:
+
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/da46d74c-da0a-4d18-b183-9c0e973c05d6">
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/66c7a181-e975-4968-b501-fa72a0c71ac7">
+<img align="top" src="https://github.com/design-group/style-guide/assets/91583218/e1b1613a-3886-46c5-aa51-e50203b72170">
+
+\
+The folder under `Project Library` is the `checkout` folder, relating to the `checkout` feature of the application.\
+This feature is comprised of two main pages, and thus two subfolders, `item_review` and `purchase_product`, along side the `db_calls` script for the checkout feature.\
+Each subfolder has a script for each view, like `billing_address`, `shipping_address`, and `payment_information`.
+
 ## Logging
 Always include logger definition as the first line of a script module, or a script transform. Loggers should be defined with `system.util.getLogger()` and use the full package path as their name.
 
