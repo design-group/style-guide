@@ -213,7 +213,7 @@ You could find long and complicated functions when working with some code. Do no
 ## Folder Structure
 The top-level `Views` folder should contain folders that organize the views based on the navigation structure of the application. The steps taken to access a view in the Designer should be similar to those taken to access the view in the application.
 
-Each folder under the `Views` folder should have the following structure: 
+Each folder under the native Perspective `Views` folder should have the following structure: 
 1. One view, with a clear and full-text name that explains the purpose of the view and matches the name of its parent folder.
 2. A folder named Embedded Views. Any embedded or repeated views used by the main view should be stored in this Embedded Views folder. This folder may contain multiple views and/or multiple folders to group and organize related or deeply nested views.
 3. (Optional) A folder named Popups containing all popup views.
