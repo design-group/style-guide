@@ -221,28 +221,27 @@ Each folder under the `Views` folder should have the following structure:
 For Example:
 
 ```sh
-└── Views
-    └── Main
-        ├── Embedded Views
-        │   ├── Messenger Views
-        │   │   ├── Sent Messages
-        │   │   │   ├── Sent Messages View 1
-        │   │   │   └── Sent Messages View 2
-        │   │   ├── Received Messages
-        │   │   │   ├── Received Messages View 1
-        │   │   │   └── Received Messages View 2
-        │   │   ├── Messenger Subview 1
-        │   │   └── Messenger Subview 2
-        │   ├── Shopping Views
-        │   │   ├── Shopping View 1
-        │   │   ├── Shopping View 2
-        │   │   └── Shopping View 3
-        │   ├── Main Subview 1
-        │   └── Main Subview 2
-        ├── Popups
-        │   ├── Error Popup
-        │   └── Warning Popup
-        └── Main View
+└── Example Feature
+    ├── Embedded Views
+    │   ├── Messenger
+    │   │   ├── Sent Messages
+    │   │   │   ├── Sent Messages 1
+    │   │   │   └── Sent Messages 2
+    │   │   ├── Received Messages
+    │   │   │   ├── Received Messages 1
+    │   │   │   └── Received Messages 2
+    │   │   ├── Subview 1
+    │   │   └── Subview 2
+    │   ├── Shopping
+    │   │   ├── Shopping 1
+    │   │   ├── Shopping 2
+    │   │   └── Shopping 3
+    │   ├── Subview 1
+    │   └── Subview 2
+    ├── Popups
+    │   ├── Error
+    │   └── Warning
+    └── Example Feature
 ```
 
 The top level `Views` folder contains a single folder for the `Main` view.\
