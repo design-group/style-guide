@@ -128,6 +128,42 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 
 
 # Scripting
+## File Structure
+The top-level `Project Library` folder should contain folders that organize your scripts based on the structure of the application. Each package under the `Project Library` folder should correspond to a major feature of the application, with further sub-packages for pages and scripts within these sub-packages for each view.
+
+For Example:
+
+```sh
+└── Scripting
+    └── Project Library
+        ├── feature_1
+        │   ├── messenger_views
+        │   │   ├── sent_messages_views
+        │   │   │   ├── sent_messages_view_1
+        │   │   │   └── sent_messages_view_2
+        │   │   ├── received_messages_view
+        │   │   │   ├── received_messages_view_1
+        │   │   │   └── received_messages_view_2
+        │   │   ├── messenger_subview_1
+        │   │   └── messenger_subview_2
+        │   ├── shopping_views
+        │   │   ├── shopping_view_1
+        │   │   ├── shopping_view_2
+        │   │   └── shopping_view_3
+        │   ├── feature_1_view_1
+        │   └── feature_1_view_2
+        ├── feature_2
+        │   ├── feature_2_view_1
+        │   └── feature_2_view_2
+        ├── feature_3
+        │   └── ...
+```
+
+\
+Under `Project Library` are the `feature_x` folders, relating to the features and/or pages of the application.\
+These feature are sometimes comprised of many views, and thus contain subfolders within themselves, organized in a corresponding way to their perspective strucuture.\
+Each script corressponds to a single view, like the nested `received_messages_view_1` or the surface level `feature_2_view_2`.
+
 ## Logging
 Always include logger definition as the first line of a script module, or a script transform. Loggers should be defined with `system.util.getLogger()` and use the full package path as their name.
 
