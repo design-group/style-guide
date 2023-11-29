@@ -117,7 +117,7 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 `Tag Name`,
 `parameterName`,
 
-## Stored Procedures
+## Database
 `SCHEMA_NAME`,
 `DATABASE_NAME`,
 `storedProcedureName`,
