@@ -208,6 +208,20 @@ Even if your long function works perfectly now, someone modifying it in a few mo
 
 You could find long and complicated functions when working with some code. Do not be intimidated by modifying existing code: if working with such a function proves to be difficult, you find that errors are hard to debug, or you want to use a piece of it in several different contexts, consider breaking up the function into smaller and more manageable pieces.
 
+## SQL
+#### CASE instead of OR
+This is an example of bad query because using OR is heavy espeacially when there are massive data (:area_location is a parameter in named query):
+```sql
+  SELECT * FROM Events
+  WHERE
+      :area_location IS NULL OR area_location = :area_location
+```
+Instead, use CASE statement:
+```sql
+  SELECT * FROM Events
+  WHERE
+      CASE WHEN :area IS NULL THEN 1 WHEN area = :area THEN 1 ELSE 0 END = 1
+```
 # Perspective
 
 ## Folder Structure
