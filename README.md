@@ -85,6 +85,7 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 
 ## File extensions
 - For Yet Another Markup Language (YAML) files needed for files such as for Docker Compose, GitHub Actions, etc. the preferred file extension is `.yaml`.
+
 ## Scripting
 `module_name`, 
 `package_name`, 
@@ -97,6 +98,7 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 `instance_var_name`,
 `function_parameter_name`, 
 `local_var_name`,
+
 ## Perspective
 `Folder Name`,
 `View Name`,
@@ -104,6 +106,7 @@ Function names, variable names, and filenames should be descriptive; eschew abbr
 `propertyName`,
 `messageHandlerName`,
 `Component Name`,
+
 ## Vision
 `Folder Name`,
 `Template Name`,
@@ -183,13 +186,46 @@ Parameters: [A list of parameters taken by this function. Should include the exp
 ```
 Example:
 ```python
-def csvToDataSet(file_data, has_headers):
-  """
-  DESCRIPTION: Given file data from an imported CSV file, return a dataset suitable for display in an Ignition table. 
-              This function is compatible with data accessed by the Perspective File Upload component.
-  PARAMETERS: file_data (REQ, array) - the bytes of a selected file. Obtained by file.getBytes().
-              has_headers (REQ, boolean) - True if the spreadsheet has a header row that should not be included in the actual dataset 
-  """
+def process_user_data(user_records, fields_to_include=None, normalize_names=False):
+    """
+    Processes raw user records and returns a filtered, standardized dataset.
+
+    Takes a list of user records and returns a cleaned dictionary containing
+    only the requested fields. Optionally normalizes user names to a standard
+    format.
+
+    Args:
+        user_records: A list of dictionaries containing user data. Each
+            dictionary must contain at least 'id' and 'name' fields.
+        fields_to_include: Optional list of field names to include in output.
+            If None, includes all available fields. Unknown fields are ignored.
+        normalize_names: If True, converts all names to lowercase and
+            replaces spaces with underscores.
+
+    Returns:
+        A dict mapping user IDs to their processed data records.
+        Each record is a dictionary of the requested fields. For example:
+
+        {
+            'USER_001': {
+                'name': 'john_doe',
+                'email': 'john@example.com',
+                'role': 'admin'
+            },
+            'USER_002': {
+                'name': 'jane_smith',
+                'email': 'jane@example.com',
+                'role': 'user'
+            }
+        }
+
+        If a user record is missing required fields, it will be omitted
+        from the results.
+
+    Raises:
+        ValueError: If user_records is empty or not a list of dictionaries.
+        KeyError: If required fields are missing from user records.
+    """
 ```
 
 If there are no parameters, we should still include the text `None` like so:
@@ -255,13 +291,14 @@ For Example:
     ├── Popups
     │   ├── Error
     │   └── Warning
-    └── Example Feature
+    └── Main
 ```
 
 The top level native Perspective `Views` folder contains a folder that describes the primary feature in this tree. \
 The `Example Feature` folder contains the `Embedded Views` folder, `Popups` folder, and `Example Feature` view.\
 The `Embedded Views` folder expands into multiple folders and views, the folders organize related views that need to stay together.\
 The `Shopping` folder simply contains a few related views, while the `Messenger` folder contains a subviews and additional folders to further group and organize nested views.
+The `Main` view is the primary view for this feature that comprises all of the other views in the folder.
 
 ## View Structure
 The root container of a view should be one of the following:
@@ -287,7 +324,7 @@ If a component property needs to be accessed by another component, it should be 
 
 A visual representation of the architecture around the gateway can be useful when planning a project or sharing designs with a client.
 
-![Architecture Diagram](https://inductiveautomation.com/static/images/architectures/ArchitectureDiagram-Standard@2x.png "IA Example Architecture Diagram")
+![Architecture Diagram](https://assets.inductiveautomation.com/static/images/architectures/enterprise-scada-architecture.509ea1a50cff.png "IA Example Architecture Diagram")
 
 IA provides [a library of graphics](https://bw1.sharepoint.com/sites/IgnitionUsersGroup/Shared%20Documents/Helpful%20Ignition%20Resources/ArchitectureDiagramElements.zip) that represent many different devices that may be included in the architecture. These graphics should be used when building our own diagrams to promote clarity and consistency between projects.
 
