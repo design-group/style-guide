@@ -1,3 +1,18 @@
+> # ➡️ Our open source has a new home
+>
+> **`design-group/style-guide` is no longer actively maintained.**
+>
+> Barry-Wehmiller Design Group's public open-source work now lives in the **BW Design Group** organization:
+>
+> ### 👉 [github.com/bw-design-group](https://github.com/bw-design-group)
+>
+> The standards and reference material that lived here have moved into our internal documentation site. A public edition is planned but not yet available.
+>
+> This repository is preserved read-only for historical reference. For current tools and templates, please browse the new organization.
+
+---
+
+<!-- Original README preserved below for reference -->
 # Overview
 This is an opinionated document built with the intention of creating consistent and easy to manage Ignition projects.
 
